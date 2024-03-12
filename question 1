@@ -1,0 +1,171 @@
+Two words are anagrams of one another if their letters can be rearranged to form the other word.
+
+Given a string, split it into two contiguous substrings of equal length. Determine the minimum number of characters to change to make the two substrings into anagrams of one another.
+
+Example
+
+Break  into two parts: 'abc' and 'cde'. Note that all letters have been used, the substrings are contiguous and their lengths are equal. Now you can change 'a' and 'b' in the first substring to 'd' and 'e' to have 'dec' and 'cde' which are anagrams. Two changes were necessary.
+
+Function Description
+
+Complete the anagram function in the editor below.
+
+anagram has the following parameter(s):
+
+string s: a string
+Returns
+
+int: the minimum number of characters to change or -1.
+Input Format
+
+The first line will contain an integer, , the number of test cases.
+Each test case will contain a string .
+
+Constraints
+
+
+ consists only of characters in the range ascii[a-z].
+Sample Input
+
+6
+aaabbb
+ab
+abc
+mnop
+xyyx
+xaxbbbxx
+Sample Output
+
+3
+1
+-1
+2
+0
+1
+Explanation
+
+Test Case #01: We split  into two strings ='aaa' and ='bbb'. We have to replace all three characters from the first string with 'b' to make the strings anagrams.
+
+Test Case #02: You have to replace 'a' with 'b', which will generate "bb".
+
+Test Case #03: It is not possible for two strings of unequal length to be anagrams of one another.
+
+Test Case #04: We have to replace both the characters of first string ("mn") to make it an anagram of the other one.
+
+Test Case #05:  and  are already anagrams of one another.
+
+Test Case #06: Here S1 = "xaxb" and S2 = "bbxx". You must replace 'a' from S1 with 'b' so that S1 = "xbxb".
+
+Submissions: 167
+Max Score: 25
+Difficulty: Easy
+Rate This Challenge:
+
+    
+More
+ 
+ 
+1
+  import java.io.*;
+2
+ import java.math.*;
+3
+ import java.security.*;
+4
+ import java.text.*;
+5
+ import java.util.*;
+6
+ import java.util.concurrent.*;
+7
+ import java.util.function.*;
+8
+ import java.util.regex.*;
+9
+ import java.util.stream.*;
+10
+ import static java.util.stream.Collectors.joining;
+11
+ import static java.util.stream.Collectors.toList;
+12
+​
+13
+  class Result {
+14
+​
+15
+    /*
+16
+     * Complete the 'anagram' function below.
+17
+     *
+18
+     * The function is expected to return an INTEGER.
+19
+     * The function accepts STRING s as parameter.
+20
+     */
+21
+​
+22
+    public static int anagram(String s) {
+23
+    // Write your code here
+24
+​
+25
+    }
+26
+​
+27
+ }
+28
+​
+29
+ public class Solution {
+30
+    public static void main(String[] args) throws IOException {
+31
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+32
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+33
+​
+34
+        int q = Integer.parseInt(bufferedReader.readLine().trim());
+35
+​
+36
+        IntStream.range(0, q).forEach(qItr -> {
+37
+            try {
+38
+                String s = bufferedReader.readLine();
+39
+​
+40
+                int result = Result.anagram(s);
+41
+​
+42
+                bufferedWriter.write(String.valueOf(result));
+43
+                bufferedWriter.newLine();
+44
+            } catch (IOException ex) {
+45
+                throw new RuntimeException(ex);
+46
+            }
+47
+        });
+48
+​
+49
+        bufferedReader.close();
+50
+        bufferedWriter.close();
+51
+    }
+52
+ }
